@@ -1,0 +1,12 @@
+<h2><%= @song.name %></h2>
+<h3><%= @album.name %></h4>
+<h3><%= @song.lyrics %><h3>
+
+<p><%= link_to "Edit" @song.name, edit_album_song_path(@song) %></p>
+<p><%= link_to "Delete" @song.name, album_song_path(@song, @album),
+                                    :data => {
+                                      :confirm => "Are you sure?"
+                                      :method => "delete"
+                                    }
+                                    %></p>
+<p><%= link_to "Returb to" @album.name, album_path(@album) %></p>
