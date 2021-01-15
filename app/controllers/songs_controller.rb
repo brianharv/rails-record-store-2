@@ -17,7 +17,8 @@ class SongsController < ApplicationController
   end
   
   def edit
-    @song = Song.find(params[:id])
+    @album = Album.find(params[:album_id])
+    @song = @album.songs.new(songs_params)
     render :edit
   end
   
@@ -29,9 +30,10 @@ class SongsController < ApplicationController
   
   def update
     @song = Song.find(params[:id])
-    if @Song.update(song_params)
-      redirect_to songs_path
+    if @song.update(song_params)
+      redirect_to album_path(@song.album)
     else
+      @album = Album.find(params[:album_id]) #this is essentially a mini edit method inside the update method
       render :edit
     end    
   end

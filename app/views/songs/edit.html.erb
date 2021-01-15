@@ -1,0 +1,10 @@
+<h3><%= "Edit "@song.name%>
+<h3><%= "from" @album.name%>
+
+<%= form_for [@album, @song] do |s| %>
+  <%= s.label :name %>
+  <%= s.text_field :name %>
+  <%= s.label :lyrics %>
+  <%= s.text_area :lyrics %>
+  <p><%= s.submit %></p>
+<%= end %>  
