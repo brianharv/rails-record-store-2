@@ -1,0 +1,9 @@
+<h1><%= @album.name %></h1>
+<h2><%= @album.genre %></h2>
+
+<p><%= link_to "Edit", edit_album_path(@album)%>
+<p><%= link_to "Delete", album_path(@album), 
+                          :data => {:confirm => "You sure?",
+                                    :method => "delete"} %></p>
+
+<p> <%= link_to "Return to Albums List", albums_path%> </p>                                   
