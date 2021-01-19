@@ -1,3 +1,14 @@
+
+
+<% if @album.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @album.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>  
+
 <h1> New Album <h1>
 
 <%= form_for @album do |f| %>

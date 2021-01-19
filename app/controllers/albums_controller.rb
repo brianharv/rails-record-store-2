@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
   
   def create
     @album = Album.new(album_params)
-    if @album.save # remember that returns a boolean 
+    if @album.save 
       redirect_to albums_path
     else
       render :new
